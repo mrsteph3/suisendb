@@ -1,25 +1,35 @@
 import React from 'react';
-import { Button } from 'antd';
 import './Header.css';
+import githubLogo from './images/github.png';
 
-const Header = props => (
-    <div>
-        <header class="header-fixed">
+class Header extends React.Component {
 
-            <div class="header-limiter">
+    githubClicked() {
+        console.log("Sending to GitHub page.")
+        window.open('https://github.com/mrsteph3/', '_blank')
+    }
+    
+    render() {
+        return (
+            <div>
+                <header class="header-fixed">
 
-                <h1><a href="/">Suisen<span>DB</span></a></h1>
+                    <div class="header-limiter">
 
-                <nav>
-                    <Button>Contact Me</Button>
-                </nav>
+                        <h1><a href="/">Suisen<span>DB</span></a></h1>
 
+                        <nav>
+                            <button className="githubButton"><img src={githubLogo} alt="github button" onClick={() => this.githubClicked()} /></button>
+                        </nav>
+
+                    </div>
+
+                </header>
+
+                <div class="header-fixed-placeholder"></div>
             </div>
-
-        </header>
-
-        <div class="header-fixed-placeholder"></div>
-    </div>
-);
+        );
+    }
+}
 
 export default Header;

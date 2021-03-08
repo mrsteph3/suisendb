@@ -18,9 +18,6 @@ public class AnimeDataAccessService {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    // TODO 
-    // 1. Remove all backslashes from text output
-
     private RowMapper<Anime> mapAnimeFromDb() {
         return (resultSet, i) -> {
             Integer animeId = resultSet.getInt("anime_id");

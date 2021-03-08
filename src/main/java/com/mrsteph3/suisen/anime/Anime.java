@@ -9,13 +9,14 @@ public class Anime {
     private final String titleEnglish;
     private final String titleJapanese;
     private final List<String> titleSynonyms;
+    private final String url;
     private final String type;
     private final Integer episodes;
     private final String status;
     private final String aired;
     private final String rating;
     private final Double score;
-    private final String rank;
+    private final Integer rank;
     private final Integer popularity;
     private final String background;
     private final List<String> producer;
@@ -24,12 +25,13 @@ public class Anime {
     private final List<String> endings;
     
 
-    public Anime(Integer animeId, String title, String titleEnglish, String titleJapanese, List<String> titleSynonyms, String type, Integer episodes, String status, String aired, String rating, Double score, String rank, Integer popularity, String background, List<String> producer, List<String> genre, List<String> openings, List<String> endings) {
+    public Anime(Integer animeId, String title, String titleEnglish, String titleJapanese, List<String> titleSynonyms, String url, String type, Integer episodes, String status, String aired, String rating, Double score, Integer rank, Integer popularity, String background, List<String> producer, List<String> genre, List<String> openings, List<String> endings) {
         this.animeId = animeId;
         this.title = title;
         this.titleEnglish = titleEnglish;
         this.titleJapanese = titleJapanese;
         this.titleSynonyms = titleSynonyms;
+        this.url = url;
         this.type = type;
         this.episodes = episodes;
         this.status = status;
@@ -70,6 +72,10 @@ public class Anime {
         return this.titleSynonyms;
     }
 
+    public String getUrl() {
+        return this.url;
+    }
+
 
     public String getType() {
         return this.type;
@@ -101,7 +107,7 @@ public class Anime {
     }
 
 
-    public String getRank() {
+    public Integer getRank() {
         return this.rank;
     }
 

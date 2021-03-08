@@ -18,6 +18,9 @@ public class AnimeDataAccessService {
         this.jdbcTemplate = jdbcTemplate;
     }
 
+    // TODO 
+    // 1. Remove all backslashes from text output
+
     private RowMapper<Anime> mapAnimeFromDb() {
         return (resultSet, i) -> {
             Integer animeId = resultSet.getInt("anime_id");
@@ -25,24 +28,32 @@ public class AnimeDataAccessService {
             String titleEnglish = resultSet.getString("title_english");
             String titleJapanese = resultSet.getString("title_japanese");
             String titleSynonymsString = resultSet.getString("title_synonyms");
-            List<String> titleSynonyms = Arrays.asList(titleSynonymsString.split(","));
+            List<String> titleSynonyms = Arrays.asList(titleSynonymsString.replaceAll("\\\\", "").split(","));
+            String url = resultSet.getString("image_url");
             String type = resultSet.getString("type");
             Integer episodes = resultSet.getInt("episodes");
             String status = resultSet.getString("status");
-            String airedString = resultSet.getString("aired");
+            String airedString = resultSet.getString("aired").replaceAll("\\\\", "");
             String rating = resultSet.getString("rating");
             Double score = resultSet.getDouble("score");
-            String rank = resultSet.getString("rank");
+            String rankString = resultSet.getString("rank");
+            Integer rank;
+            try {
+                rank = Integer.parseInt(rankString);
+            } catch (NumberFormatException e) {
+                rank = 0;
+            }
             Integer popularity = resultSet.getInt("popularity");
-            String background = resultSet.getString("background");
+            String background = resultSet.getString("background").replaceAll("\\\\", "");
             String producerString = resultSet.getString("producer");
-            List<String> producer = Arrays.asList(producerString.split(","));
+            List<String> producer = Arrays.asList(producerString.replaceAll("\\\\", "").split(","));
             String genreString = resultSet.getString("genre");
-            List<String> genre = Arrays.asList(genreString.split(","));
+            List<String> genre = Arrays.asList(genreString.replaceAll("\\\\", "").split(","));
+            genre.replaceAll(String::trim);
             String openingString = resultSet.getString("opening_theme");
-            List<String> openings = Arrays.asList(openingString.split(","));
+            List<String> openings = Arrays.asList(openingString.replaceAll("\\\\", "").split(","));
             String endingString = resultSet.getString("ending_theme");
-            List<String> endings = Arrays.asList(endingString.split(","));
+            List<String> endings = Arrays.asList(endingString.replaceAll("\\\\", "").split(","));
 
             return new Anime(
                 animeId,
@@ -50,6 +61,7 @@ public class AnimeDataAccessService {
                 titleEnglish,
                 titleJapanese,
                 titleSynonyms,
+                url,
                 type,
                 episodes,
                 status,

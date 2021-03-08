@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Container from './Container';
 import Header from './Header';
-import CenteredDisply from './CenteredDisplay';
+import CenteredDisplay from './CenteredDisplay';
 import { getAllAnime } from './client';
 import { Button, Empty, Modal, Spin, Table, Tag } from 'antd';
 import { LoadingOutlined } from '@ant-design/icons';
@@ -79,7 +79,6 @@ class App extends Component {
           key: 'animeId',
           sorter: (a, b) => a.animeId - b.animeId,
           sortDirections: ['ascend', 'descend'],
-          defaultSortOrder: 'ascend'
         },
         {
           title: 'Title',
@@ -295,7 +294,10 @@ class App extends Component {
               value: 'Josei',
             }
           ],
-          onFilter: (value, record) => record.genre.includes(value)
+          filterMultiple: true,
+          onFilter: (value, record) => {
+            return record.genre.includes(value)
+          }
         },
         {
           title: 'Rating',
@@ -351,6 +353,7 @@ class App extends Component {
             return (b.popularity !== 0) - (a.popularity !== 0) || a.popularity - b.popularity;
           },
           sortDirections: ['ascend', 'descend'],
+          defaultSortOrder: 'ascend'
         },
         {
           title: '',
@@ -383,18 +386,18 @@ class App extends Component {
             onCancel={this.closeMoreInfoModal}
             width={1000}>
 
-              <CenteredDisply>
+              <CenteredDisplay>
               
               <img alt={selectedAnime['title']} src={selectedAnimeURL} />
               <h1>{selectedAnime['title']}</h1>
               <p>{selectedAnime['titleJapanese']}</p>
               <p>{selectedAnime['background']}</p>
-              </CenteredDisply>
+              </CenteredDisplay>
               <ul>
               <li><b>Type:</b> {selectedAnime['type']}</li>
               <li><b>Number of episodes:</b> {selectedAnime['episodes']}</li>
               <li><b>Status:</b> {selectedAnime['status']}</li>
-              {/* <p>Aired: {selectedAnime['aired']}</p> */}
+              <li><b>Aired:</b> {selectedAnime['aired']}</li>
               <li><b>Rating:</b> {selectedAnime['rating']}</li>
               <li><b>Score:</b> {selectedAnime['score']}</li>
               <li><b>Rank:</b> {selectedAnime['rank']}</li>

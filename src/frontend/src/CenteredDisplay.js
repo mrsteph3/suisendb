@@ -1,9 +1,9 @@
 import React from 'react';
 
-const CenteredDisply = props => (
+const CenteredDisplay = props => (
     <div style={{margin: '0 auto', textAlign: 'center'}}>
         {props.children}
     </div>
 );
 
-export default CenteredDisply;
+export default CenteredDisplay;

@@ -25,7 +25,6 @@ public class AnimeDataAccessService {
         return (resultSet, i) -> {
             Integer animeId = resultSet.getInt("anime_id");
             String title = resultSet.getString("title");
-            String titleEnglish = resultSet.getString("title_english");
             String titleJapanese = resultSet.getString("title_japanese");
             String titleSynonymsString = resultSet.getString("title_synonyms");
             List<String> titleSynonyms = Arrays.asList(titleSynonymsString.replaceAll("\\\\", "").split(","));
@@ -33,7 +32,7 @@ public class AnimeDataAccessService {
             String type = resultSet.getString("type");
             Integer episodes = resultSet.getInt("episodes");
             String status = resultSet.getString("status");
-            String airedString = resultSet.getString("aired").replaceAll("\\\\", "");
+            String aired = resultSet.getString("aired");
             String rating = resultSet.getString("rating");
             Double score = resultSet.getDouble("score");
             String rankString = resultSet.getString("rank");
@@ -58,14 +57,13 @@ public class AnimeDataAccessService {
             return new Anime(
                 animeId,
                 title,
-                titleEnglish,
                 titleJapanese,
                 titleSynonyms,
                 url,
                 type,
                 episodes,
                 status,
-                airedString,
+                aired,
                 rating,
                 score,
                 rank,

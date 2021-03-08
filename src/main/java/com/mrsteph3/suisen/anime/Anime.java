@@ -6,7 +6,6 @@ public class Anime {
     
     private final Integer animeId;
     private final String title;
-    private final String titleEnglish;
     private final String titleJapanese;
     private final List<String> titleSynonyms;
     private final String url;
@@ -25,10 +24,9 @@ public class Anime {
     private final List<String> endings;
     
 
-    public Anime(Integer animeId, String title, String titleEnglish, String titleJapanese, List<String> titleSynonyms, String url, String type, Integer episodes, String status, String aired, String rating, Double score, Integer rank, Integer popularity, String background, List<String> producer, List<String> genre, List<String> openings, List<String> endings) {
+    public Anime(Integer animeId, String title, String titleJapanese, List<String> titleSynonyms, String url, String type, Integer episodes, String status, String aired, String rating, Double score, Integer rank, Integer popularity, String background, List<String> producer, List<String> genre, List<String> openings, List<String> endings) {
         this.animeId = animeId;
         this.title = title;
-        this.titleEnglish = titleEnglish;
         this.titleJapanese = titleJapanese;
         this.titleSynonyms = titleSynonyms;
         this.url = url;
@@ -55,11 +53,6 @@ public class Anime {
 
     public String getTitle() {
         return this.title;
-    }
-
-
-    public String getTitleEnglish() {
-        return this.titleEnglish;
     }
 
 
@@ -147,7 +140,6 @@ public class Anime {
         return "{" +
             " animeId='" + getAnimeId() + "'" +
             ", title='" + getTitle() + "'" +
-            ", titleEnglish='" + getTitleEnglish() + "'" +
             ", titleJapanese='" + getTitleJapanese() + "'" +
             ", titleSynonyms='" + getTitleSynonyms() + "'" +
             ", type='" + getType() + "'" +

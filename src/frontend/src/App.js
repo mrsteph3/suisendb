@@ -379,8 +379,9 @@ class App extends Component {
       return (
         <div>
           <Header />
+          
           <Modal
-            title='More Information'
+            title='Details'
             visible={isMoreInfoModalVisible}
             onOk={this.closeMoreInfoModal}
             onCancel={this.closeMoreInfoModal}
@@ -394,18 +395,18 @@ class App extends Component {
               <p>{selectedAnime['background']}</p>
               </CenteredDisplay>
               <ul>
-              <li><b>Type:</b> {selectedAnime['type']}</li>
-              <li><b>Number of episodes:</b> {selectedAnime['episodes']}</li>
-              <li><b>Status:</b> {selectedAnime['status']}</li>
-              <li><b>Aired:</b> {selectedAnime['aired']}</li>
-              <li><b>Rating:</b> {selectedAnime['rating']}</li>
-              <li><b>Score:</b> {selectedAnime['score']}</li>
-              <li><b>Rank:</b> {selectedAnime['rank']}</li>
-              <li><b>Popularity:</b> {selectedAnime['popularity']}</li>
-              <li><b>Producer(s):</b> {selectedAnime['producer']}</li>
+                <li><b>Type:</b> {selectedAnime['type']}</li>
+                <li><b>Number of episodes:</b> {selectedAnime['episodes']}</li>
+                <li><b>Status:</b> {selectedAnime['status']}</li>
+                <li><b>Aired:</b> {selectedAnime['aired']}</li>
+                <li><b>Rating:</b> {selectedAnime['rating']}</li>
+                <li><b>Score:</b> {selectedAnime['score']}</li>
+                <li><b>Rank:</b> {selectedAnime['rank']}</li>
+                <li><b>Popularity:</b> {selectedAnime['popularity']}</li>
+                <li><b>Producer(s):</b> {selectedAnime['producer']}</li>
               </ul>
-
           </Modal>
+
           <Container>
             <Table
               dataSource={anime}
@@ -413,6 +414,7 @@ class App extends Component {
               pagination={true}
               rowKey='animeId' />
           </Container>
+
         </div>
       );
     }

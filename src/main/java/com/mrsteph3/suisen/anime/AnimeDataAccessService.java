@@ -29,7 +29,7 @@ public class AnimeDataAccessService {
             String type = resultSet.getString("type");
             Integer episodes = resultSet.getInt("episodes");
             String status = resultSet.getString("status");
-            String aired = resultSet.getString("aired");
+            String aired = resultSet.getString("aired").replaceAll("\\\\", "");
             String rating = resultSet.getString("rating");
             Double score = resultSet.getDouble("score");
             String rankString = resultSet.getString("rank");

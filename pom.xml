@@ -45,9 +45,9 @@
 	</dependencies>
 	<profiles>
 		<profile>
-			<id>test</id>
+			<id>prod</id>
 			<properties>
-				<spring.profiles.active>test</spring.profiles.active>
+				<spring.profiles.active>prod</spring.profiles.active>
 			</properties>
 			<build>
 				<resources>

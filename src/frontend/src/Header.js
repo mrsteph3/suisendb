@@ -12,9 +12,9 @@ class Header extends React.Component {
     render() {
         return (
             <div>
-                <header class="header-fixed">
+                <header className="header-fixed">
 
-                    <div class="header-limiter">
+                    <div className="header-limiter">
 
                         <h1><a href="/">Suisen<span>DB</span></a></h1>
 
@@ -26,7 +26,7 @@ class Header extends React.Component {
 
                 </header>
 
-                <div class="header-fixed-placeholder"></div>
+                <div className="header-fixed-placeholder"></div>
             </div>
         );
     }

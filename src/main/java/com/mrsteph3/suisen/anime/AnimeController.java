@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("anime")
+@RequestMapping("api/v1/anime")
 public class AnimeController {
     
     private final AnimeService animeService;

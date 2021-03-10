@@ -4,8 +4,10 @@
 ![Issues](https://img.shields.io/github/issues/mrsteph3/suisendb)
 ![Tweet](https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com%2Fmrsteph3%2Fsuisendb)
 <br />
-![](demo.gif) 
 SuisenDB is a tool to help find the anime you want to watch next! 
+
+## Demonstration
+![](demo.gif) 
 
 ## Made With
 * Frontend: JavaScript with React (AWS Elastic Beanstalk).

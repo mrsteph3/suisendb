@@ -1,5 +1,9 @@
 # [SuisenDB](http://suisendb-env.eba-bupgqjyt.us-east-2.elasticbeanstalk.com/)
-
+[![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/mrsteph3/suisendb/blob/master/LICENSE)
+[![PR's Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
+![Issues](https://img.shields.io/github/issues/mrsteph3/suisendb)
+![Tweet](https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com%2Fmrsteph3%2Fsuisendb)
+<br />
 SuisenDB is a tool to help find the anime you want to watch next! 
 
 ## Made With

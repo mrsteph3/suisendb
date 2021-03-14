@@ -13,5 +13,7 @@ const checkStatus = response => {
     }
 }
 
-export const getOpeningId = (animeName) => fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${animeName}%20opening%20theme&key=AIzaSyBWZP2y_fCdUmr0JKxz79m_aIZ8pfSUkd4`).then(checkStatus);
-export const getEndingId = (animeName) => fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${animeName}%20ending%20theme&key=AIzaSyBWZP2y_fCdUmr0JKxz79m_aIZ8pfSUkd4`).then(checkStatus);
+const API_KEY = process.env.REACT_APP_YOUTUBE_API_KEY;
+
+export const getOpeningId = (animeName) => fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${animeName}%20opening%20theme&key=${API_KEY}`).then(checkStatus);
+export const getEndingId = (animeName) => fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${animeName}%20ending%20theme&key=${API_KEY}`).then(checkStatus);

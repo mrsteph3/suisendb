@@ -33,6 +33,5 @@ build/
 .vscode/
 
 /src/frontend/node/
-/src/fronend/node_modules
-
-TODO
+/src/frontend/node_modules
+/src/frontend/src/.env

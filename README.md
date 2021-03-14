@@ -60,7 +60,7 @@ You can filter by format, genres, and age rating as well as sort by score, rank,
 
 * [ver 0.0.2] ~~Implement links to Opening and Closing themes within the details modals for each anime. The database and API already support this feature.~~
 * [ver 0.0.3] ~~Add a custom domain~~
-* Configure HTTPS for secure connections.
+* [ver 0.0.3] ~~Configure HTTPS for secure connections.~~
 * Add a custom favicon. Currently it is the default React favicon.
 
 ## Contributing

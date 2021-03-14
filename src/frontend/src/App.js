@@ -3,9 +3,11 @@ import Container from './Container';
 import Header from './Header';
 import CenteredDisplay from './CenteredDisplay';
 import { getAllAnime } from './client';
+import { getOpeningId, getEndingId } from './youtubeclient';
 import { Button, Empty, Modal, Spin, Table, Tag } from 'antd';
 import { LoadingOutlined } from '@ant-design/icons';
 import 'antd/dist/antd.css';
+import YoutubeEmbed from './YoutubeEmbed';
 import './App.css';
 
 const jikanjs  = require('jikanjs'); // Uses per default the API version 3
@@ -17,9 +19,12 @@ class App extends Component {
   state = {
     anime: [],
     isFetching: false,
+    isFetchingVideoIds: false,
     isMoreInfoModalVisible: false,
     selectedAnime: 0,
-    selectedAnimeURL: ''
+    selectedAnimeURL: '',
+    selectedOpeningId: '',
+    selectedEndingId: ''
   }
 
   componentDidMount() {
@@ -57,11 +62,53 @@ class App extends Component {
       });
   }
 
+  fetchVideoIds = (title) => {
+    this.setState({
+      isFetchingVideoIds: true
+    })
+
+    getOpeningId(title)
+      .then(res => res.json()
+        .then(json => {
+          console.log(json["items"][0]["id"]["videoId"]);
+          this.setState({
+            selectedOpeningId: json["items"][0]["id"]["videoId"],
+            isFetchingVideoIds: false
+          });
+        })
+      )
+      .catch(error => {
+        console.log(error)
+        this.setState({
+          isFetchingVideoIds: false
+        });
+      });
+
+    getEndingId(title)
+      .then(res => res.json()
+        .then(json => {
+          console.log(json["items"][0]["id"]["videoId"]);
+          this.setState({
+            selectedEndingId: json["items"][0]["id"]["videoId"],
+            isFetchingVideoIds: false
+          });
+        })
+      )
+      .catch(error => {
+        console.log(error)
+        this.setState({
+          isFetchingVideoIds: false
+        });
+      });
+  }
+
+
+
 
 
   render() {
 
-    const { anime, isFetching, isMoreInfoModalVisible, selectedAnime, selectedAnimeURL } = this.state;
+    const { anime, isFetching, isMoreInfoModalVisible, selectedAnime, selectedAnimeURL, selectedOpeningId, selectedEndingId } = this.state;
 
     if (isFetching) {
       return (
@@ -369,7 +416,7 @@ class App extends Component {
                 }).catch((err) => {
                   console.log(err);
                 });
-                
+                this.fetchVideoIds(aid.title);
             }}
             type="primary">Details</Button>
           )
@@ -392,7 +439,7 @@ class App extends Component {
               <img alt={selectedAnime['title']} src={selectedAnimeURL} />
               <h1>{selectedAnime['title']}</h1>
               <p>{selectedAnime['titleJapanese']}</p>
-              <p>{selectedAnime['background']}</p>
+              <p dangerouslySetInnerHTML={{__html: selectedAnime['background']}} />
               </CenteredDisplay>
               <ul>
                 <li><b>Type:</b> {selectedAnime['type']}</li>
@@ -405,6 +452,18 @@ class App extends Component {
                 <li><b>Popularity:</b> {selectedAnime['popularity']}</li>
                 <li><b>Producer(s):</b> {selectedAnime['producer']}</li>
               </ul>
+              <p><b>DISCLAIMER: The following media is owned by their respective licensors and producers and is displayed here with intent to educate under the Fair Use Act.</b></p>
+              <p><b>ALSO: Opening and ending themes MAY contain spoiler content from newer seasons (E.g. Attack on Titan Season 4 themes may show up on the details box for Season 1) so watch at your own risk!</b></p>
+              <p><b>Opening Theme:</b></p>
+
+              <YoutubeEmbed embedId={selectedOpeningId} />
+
+              <br />
+
+              <p><b>Ending Theme:</b></p>
+
+              <YoutubeEmbed embedId={selectedEndingId} />
+              
           </Modal>
 
           <Container>

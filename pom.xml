@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.mrsteph3</groupId>
 	<artifactId>suisen</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.3-SNAPSHOT</version>
 	<name>suisen</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
@@ -43,7 +43,7 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-	<profiles>
+	<!-- <profiles>			Uncomment to build for production.
 		<profile>
 			<id>prod</id>
 			<properties>
@@ -133,7 +133,7 @@
 				</plugins>
 			</build>
 		</profile>
-	</profiles>
+	</profiles> -->
 	<build>
 		<plugins>
 			<plugin>

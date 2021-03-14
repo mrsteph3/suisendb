@@ -34,4 +34,4 @@ build/
 
 /src/frontend/node/
 /src/frontend/node_modules
-/src/frontend/src/.env
+/src/frontend/.env

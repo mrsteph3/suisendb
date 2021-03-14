@@ -1,16 +1,16 @@
-spring:
-    profiles:
-        active: prod
+# spring:
+#     profiles:
+#         active: prod
 
-server:
-    port: 5000
+# server:
+#     port: 5000
 
 # Remove everything above for local development
 
 app:
     datasource:
         # Modify this to be 'jdbc:postgresql://localhost:5432/suisendb' for local development
-        jdbc-url: jdbc:postgresql://suisendb-instance.cql93dwxjfib.us-east-2.rds.amazonaws.com:5432/suisendb 
+        jdbc-url: jdbc:postgresql://localhost:5432/suisendb 
         username: postgres
         password: password
         pool-size: 30

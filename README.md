@@ -51,7 +51,7 @@ Note: You can change the port number to whatever you want. This will be the port
 
 ## Usage
 
-Either clone the project and build locally or navigate to [SuisenDB](http://suisendb-env.eba-bupgqjyt.us-east-2.elasticbeanstalk.com/) to see the project in production. 
+Either clone the project and build locally or navigate to [SuisenDB](http://suisen.xyz) to see the project in production. 
 You can filter by format, genres, and age rating as well as sort by score, rank, and popularity to find the next anime you want to watch!
 
 <b>Newly added in ver 0.0.2</b>, you can now watch the opening and closing themes for most anime on the site within the details modals.

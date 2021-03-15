@@ -12,7 +12,7 @@ SuisenDB is a tool to help find the anime you want to watch next!
 ## Made With
 * Frontend: JavaScript with React (AWS Elastic Beanstalk).
 * Backend: Java 11 with Spring Boot and Maven (AWS Elastic Beanstalk).
-* Database: PostgreSQL which holds all 14000 anime entries in a single table (AWS RDS).
+* Database: PostgreSQL (AWS RDS).
 
 ## Installation
 
@@ -61,7 +61,9 @@ You can filter by format, genres, and age rating as well as sort by score, rank,
 * [ver 0.0.2] ~~Implement links to Opening and Closing themes within the details modals for each anime. The database and API already support this feature.~~
 * [ver 0.0.3] ~~Add a custom domain~~
 * [ver 0.0.3] ~~Configure HTTPS for secure connections.~~
-* Add a custom favicon. Currently it is the default React favicon.
+* [ver 0.0.3] ~~Add a custom favicon. Currently it is the default React favicon.~~
+* Add a search bar feature.
+* Add user login and authentication to save anime to watch for later (far out).
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.

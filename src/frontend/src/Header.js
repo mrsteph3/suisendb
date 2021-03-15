@@ -6,7 +6,7 @@ class Header extends React.Component {
 
     githubClicked() {
         console.log("Sending to GitHub page.")
-        window.open('https://github.com/mrsteph3/', '_blank')
+        window.open('https://github.com/mrsteph3/suisendb', '_blank')
     }
     
     render() {
@@ -19,7 +19,7 @@ class Header extends React.Component {
                         <h1><a href="/">Suisen<span>DB</span></a></h1>
 
                         <nav>
-                            <button className="githubButton"><img src={githubLogo} alt="github button" onClick={() => this.githubClicked()} /></button>
+                            <button className="githubButton" onClick={() => this.githubClicked()}>Check out the GitHub docs! <img src={githubLogo} alt="github button" /> </button>
                         </nav>
 
                     </div>

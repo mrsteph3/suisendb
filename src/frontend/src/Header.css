@@ -69,7 +69,6 @@
 	opacity: 1;
 }
 
-/* Fixed version of the header */
 
 body.fixed .header-fixed {
 	padding: 10px 40px;
@@ -138,4 +137,13 @@ body {
 	margin: 0;
 	padding: 0;
 	height: 1500px;
+}
+
+.githubButton {
+	background-color: #292c2f;
+	border-color: #5383d3;
+	border-radius: 15px;
+	border-width: 1px;
+	border-top-right-radius: 5px;
+	border-bottom-left-radius: 5px;
 }

@@ -64,6 +64,7 @@ You can filter by format, genres, and age rating as well as sort by score, rank,
 * [ver 0.0.3] ~~Add a custom favicon. Currently it is the default React favicon.~~
 * Add a search bar feature.
 * Add user login and authentication to save anime to watch for later (far out).
+* Add pagination to the API.
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
